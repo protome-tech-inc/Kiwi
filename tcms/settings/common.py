@@ -53,9 +53,15 @@ ADMINS = [
 # DEFAULT_FROM_EMAIL must be defined if you want Kiwi TCMS to send emails.
 # You also need to configure the email backend. For more information see:
 # https://docs.djangoproject.com/en/3.0/topics/email/
-DEFAULT_FROM_EMAIL = 'kiwi@example.com'
-SERVER_EMAIL = DEFAULT_FROM_EMAIL
+DEFAULT_FROM_EMAIL = 'admin@proto-me.com'
 EMAIL_SUBJECT_PREFIX = '[Kiwi-TCMS] '
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'admin@proto-me.com'
+EMAIL_HOST_PASSWORD = 'Adm1n1strativ3'
+EMAIL_PORT = 465
 
 #  SMTP specific settings
 #  EMAIL_HOST = 'smtp.example.com'

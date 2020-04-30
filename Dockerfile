@@ -7,6 +7,7 @@ RUN dnf -y --setopt=tsflags=nodocs install python3 mariadb-connector-c postgresq
 # Apache configuration for non-root users
 EXPOSE 8080
 EXPOSE 8443
+EXPOSE 465
 COPY ./httpd-foreground /httpd-foreground
 CMD /httpd-foreground
 RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf && \

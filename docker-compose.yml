@@ -24,15 +24,16 @@ services:
         ports:
             - 80:8080
             - 443:8443
+            - 465:465
         volumes:
             - uploads:/Kiwi/uploads:Z
+            - ./local_settings.py:/venv/lib64/python3.6/site-packages/tcms/settings/local_settings.py
         environment:
             KIWI_DB_HOST: db
             KIWI_DB_PORT: 3306
             KIWI_DB_NAME: kiwi
             KIWI_DB_USER: kiwi
             KIWI_DB_PASSWORD: kiwi
-
 volumes:
     db_data:
     uploads:
