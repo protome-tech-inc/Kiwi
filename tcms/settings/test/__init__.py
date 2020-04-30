@@ -32,3 +32,7 @@ DATABASES = {
 # for running localized tests, see f74c3c1
 # See https://code.djangoproject.com/ticket/29713
 LANGUAGE_CODE = os.environ.get('LANG', 'en-us').lower().replace('_', '-').split('.')[0]
+
+# for running tests with and without the internal bug-tracker
+if os.environ.get('DISABLE_INTERNAL_BUGTRACKER'):
+    INSTALLED_APPS.remove('tcms.bugs.apps.AppConfig')  # noqa: F405
